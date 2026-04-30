@@ -31,15 +31,11 @@
   /* Header */
   header { padding:40px 0 80px; }
   .brand {
-    display:inline-flex; align-items:center; gap:12px;
-    font-family:var(--font-serif); font-weight:500; font-size:20px;
-    letter-spacing:-0.01em; color:var(--ink);
+    display:inline-block;
+    line-height:0;
   }
-  .brand img { height:32px; width:auto; display:block; }
-  .brand-mono {
-    width:32px; height:32px; border:1px solid var(--ink); border-radius:4px;
-    display:inline-flex; align-items:center; justify-content:center;
-    font-family:var(--font-serif); font-weight:500; font-size:18px;
+  .brand img {
+    height:80px; width:auto; display:block;
   }
 
   /* Hero */
@@ -127,9 +123,7 @@
 
   <header>
     <a class="brand" href="/" aria-label="Poblano Rentals — home">
-      <!-- Drop logo.png in this folder. Falls back to a typographic monogram if missing. -->
-      <span class="brand-mono">P</span>
-      <span>Poblano</span>
+      <img src="/logo.png" alt="Poblano Rentals">
     </a>
   </header>
 
@@ -177,7 +171,7 @@
     <div class="contact">
       <dl style="margin:0;">
         <dt>Email</dt>
-        <dd><a href="mailto:jankelow@gmail.com">jankelow@gmail.com</a></dd>
+        <dd><a href="mailto:office@poblanorentals.com">office@poblanorentals.com</a></dd>
         <dt>Location</dt>
         <dd>Chicago, Illinois</dd>
         <dt>For current and prospective tenants</dt>
