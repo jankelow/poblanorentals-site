@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Poblano Rentals — Boutique residential rentals in Chicago</title>
+<meta name="description" content="Poblano Rentals operates a small portfolio of residential rental properties on the north side of Chicago. Owner-managed, hands-on, locally rooted.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="icon" href="/logo.png" type="image/png">
+<style>
+  :root {
+    --paper:#FAF7F2; --paper-2:#F4EFE6;
+    --ink:#1B1A17; --ink-muted:#6B655B;
+    --line:#E6E0D4; --line-soft:#EFEAE0;
+    --forest:#2F4A3A; --brass:#B08A3E;
+    --font-serif:'Fraunces',Georgia,serif;
+    --font-sans:'Inter',-apple-system,sans-serif;
+  }
+  * { box-sizing:border-box; }
+  body {
+    margin:0; background:var(--paper); color:var(--ink);
+    font-family:var(--font-sans); font-size:16px; line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  a { color:var(--forest); text-decoration:none; }
+  a:hover { text-decoration:underline; }
+  .container { max-width:880px; margin:0 auto; padding:32px; }
+
+  /* Header */
+  header { padding:40px 0 80px; }
+  .brand {
+    display:inline-flex; align-items:center; gap:12px;
+    font-family:var(--font-serif); font-weight:500; font-size:20px;
+    letter-spacing:-0.01em; color:var(--ink);
+  }
+  .brand img { height:32px; width:auto; display:block; }
+  .brand-mono {
+    width:32px; height:32px; border:1px solid var(--ink); border-radius:4px;
+    display:inline-flex; align-items:center; justify-content:center;
+    font-family:var(--font-serif); font-weight:500; font-size:18px;
+  }
+
+  /* Hero */
+  .eyebrow {
+    font-size:11px; font-weight:600; letter-spacing:0.1em; text-transform:uppercase;
+    color:var(--ink-muted); display:flex; align-items:center; margin-bottom:14px;
+  }
+  .brass-rule { width:28px; height:1px; background:var(--brass); display:inline-block; margin-right:10px; }
+  h1 {
+    font-family:var(--font-serif); font-weight:500; font-size:44px;
+    line-height:1.12; letter-spacing:-0.02em; margin:0 0 18px;
+  }
+  h2 {
+    font-family:var(--font-serif); font-weight:500; font-size:24px;
+    letter-spacing:-0.015em; margin:48px 0 12px;
+  }
+  h3 {
+    font-family:var(--font-serif); font-weight:500; font-size:18px;
+    margin:28px 0 8px;
+  }
+  .lead {
+    font-size:18px; color:var(--ink-muted); line-height:1.55;
+    max-width:600px; margin:0 0 32px;
+  }
+
+  /* Property list */
+  .properties {
+    background:#fff; border:1px solid var(--line); border-radius:10px;
+    padding:8px 0; margin:24px 0;
+    box-shadow:0 1px 2px rgba(27,26,23,0.04);
+  }
+  .property {
+    display:flex; justify-content:space-between; gap:24px;
+    padding:14px 24px; border-bottom:1px solid var(--line-soft);
+    font-size:15px;
+  }
+  .property:last-child { border-bottom:none; }
+  .property .name { font-weight:600; color:var(--ink); }
+  .property .meta { color:var(--ink-muted); font-size:13.5px; text-align:right; white-space:nowrap; }
+
+  /* Contact card */
+  .contact {
+    background:#fff; border:1px solid var(--line); border-radius:10px;
+    padding:24px; margin:24px 0;
+    box-shadow:0 1px 2px rgba(27,26,23,0.04);
+  }
+  .contact dt {
+    font-size:11px; font-weight:600; text-transform:uppercase; letter-spacing:0.09em;
+    color:var(--ink-muted); margin-top:14px;
+  }
+  .contact dt:first-child { margin-top:0; }
+  .contact dd { margin:4px 0 0; font-size:15px; color:var(--ink); }
+
+  /* SMS notice */
+  .sms-notice {
+    background:var(--paper-2); border:1px solid var(--line);
+    border-left:3px solid var(--brass);
+    border-radius:6px; padding:18px 22px; margin:32px 0;
+    font-size:14px; color:var(--ink); line-height:1.6;
+  }
+  .sms-notice strong { font-weight:600; }
+
+  /* Footer */
+  footer {
+    margin-top:80px; padding:32px 0;
+    border-top:1px solid var(--line);
+    font-size:13px; color:var(--ink-muted);
+    display:flex; flex-wrap:wrap; gap:24px; justify-content:space-between;
+  }
+  footer a { color:var(--ink-muted); }
+  footer a:hover { color:var(--ink); }
+
+  @media (max-width:600px) {
+    h1 { font-size:32px; }
+    .lead { font-size:16px; }
+    .container { padding:24px 20px; }
+    .property { flex-direction:column; gap:4px; }
+    .property .meta { text-align:left; white-space:normal; }
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <header>
+    <a class="brand" href="/" aria-label="Poblano Rentals — home">
+      <!-- Drop logo.png in this folder. Falls back to a typographic monogram if missing. -->
+      <span class="brand-mono">P</span>
+      <span>Poblano</span>
+    </a>
+  </header>
+
+  <section>
+    <div class="eyebrow"><span class="brass-rule"></span>Poblano Rentals</div>
+    <h1>Boutique residential rentals in Chicago.</h1>
+    <p class="lead">
+      Poblano Rentals is an owner-managed portfolio of residential properties on Chicago's north side.
+      We're hands-on, locally rooted, and small enough that you'll always know who's responding to your maintenance request.
+    </p>
+  </section>
+
+  <section>
+    <h2>Our properties</h2>
+    <div class="properties">
+      <div class="property">
+        <div class="name">Wellington</div>
+        <div class="meta">544–546 W Wellington Ave · 8 units</div>
+      </div>
+      <div class="property">
+        <div class="name">Ashland</div>
+        <div class="meta">2745 N Ashland Ave · 3 units</div>
+      </div>
+      <div class="property">
+        <div class="name">Damen</div>
+        <div class="meta">4321 N Damen Ave · 3 units</div>
+      </div>
+      <div class="property">
+        <div class="name">Catalpa</div>
+        <div class="meta">1423 W Catalpa Ave · 3 units</div>
+      </div>
+      <div class="property">
+        <div class="name">Erie</div>
+        <div class="meta">1957 W Erie St · 2 units</div>
+      </div>
+      <div class="property">
+        <div class="name">Addison</div>
+        <div class="meta">1231 W Addison St · 3 units</div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Contact</h2>
+    <div class="contact">
+      <dl style="margin:0;">
+        <dt>Email</dt>
+        <dd><a href="mailto:jankelow@gmail.com">jankelow@gmail.com</a></dd>
+        <dt>Location</dt>
+        <dd>Chicago, Illinois</dd>
+        <dt>For current and prospective tenants</dt>
+        <dd>Tour requests and rental inquiries are handled by Compass &amp; Avail listings linked from each property.</dd>
+      </dl>
+    </div>
+  </section>
+
+  <section>
+    <h2>Text-message communication</h2>
+    <div class="sms-notice">
+      <p style="margin:0 0 10px;">
+        <strong>Poblano Rentals uses SMS to communicate with property owners and, with consent, with tenants and prospective tenants.</strong>
+      </p>
+      <p style="margin:0 0 10px;">
+        We may send messages such as: maintenance ticket updates, contractor scheduling confirmations, lease renewal reminders, rent payment reminders, and replies to inbound questions. Messages are sent only to phone numbers our tenants and owners have provided to us directly.
+      </p>
+      <p style="margin:0 0 10px;">
+        <strong>Opt-in</strong>: by providing your phone number to Poblano Rentals (in a lease, on a maintenance request, or by saving it in your owner profile), you consent to receive non-marketing operational SMS from us. You can opt out at any time by replying <strong>STOP</strong> to any message. Reply <strong>HELP</strong> for help. Message frequency varies. Message and data rates may apply.
+      </p>
+      <p style="margin:0;">
+        <strong>Mobile information will not be shared with third parties or affiliates for marketing or promotional purposes.</strong> All SMS opt-in data and consent is held by Poblano Rentals only. See <a href="/privacy.html">Privacy Policy</a> and <a href="/terms.html">Terms of Service</a> for full details.
+      </p>
+    </div>
+  </section>
+
+  <footer>
+    <div>© 2026 Poblano Rentals · Chicago, IL</div>
+    <div>
+      <a href="/privacy.html">Privacy</a> · <a href="/terms.html">Terms</a>
+    </div>
+  </footer>
+
+</div>
+
+</body>
+</html>
