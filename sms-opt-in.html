@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SMS Opt-In — Poblano Rentals</title>
+<meta name="description" content="Opt in to receive operational SMS from Poblano Rentals — maintenance updates, contractor scheduling, lease renewal reminders.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="icon" href="/logo.png" type="image/png">
+<style>
+  :root {
+    --paper:#FAF7F2; --paper-2:#F4EFE6;
+    --ink:#1B1A17; --ink-muted:#6B655B;
+    --line:#E6E0D4; --line-soft:#EFEAE0;
+    --forest:#2F4A3A; --brass:#B08A3E;
+    --success:#3A6B4A; --success-bg:#E8F0EA;
+    --font-serif:'Fraunces',Georgia,serif;
+    --font-sans:'Inter',-apple-system,sans-serif;
+  }
+  * { box-sizing:border-box; }
+  body {
+    margin:0; background:var(--paper); color:var(--ink);
+    font-family:var(--font-sans); font-size:16px; line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  a { color:var(--forest); text-decoration:none; }
+  a:hover { text-decoration:underline; }
+  .container { max-width:680px; margin:0 auto; padding:32px; }
+
+  header { padding:32px 0 56px; }
+  .brand { display:inline-block; line-height:0; }
+  .brand img { height:64px; width:auto; display:block; }
+
+  .eyebrow {
+    font-size:11px; font-weight:600; letter-spacing:0.1em; text-transform:uppercase;
+    color:var(--ink-muted); display:flex; align-items:center; margin-bottom:14px;
+  }
+  .brass-rule { width:28px; height:1px; background:var(--brass); display:inline-block; margin-right:10px; }
+  h1 {
+    font-family:var(--font-serif); font-weight:500; font-size:36px;
+    line-height:1.15; letter-spacing:-0.02em; margin:0 0 18px;
+  }
+  h2 {
+    font-family:var(--font-serif); font-weight:500; font-size:22px;
+    letter-spacing:-0.015em; margin:40px 0 12px;
+  }
+  .lead {
+    font-size:17px; color:var(--ink-muted); line-height:1.55; margin:0 0 32px;
+  }
+
+  /* Big START card */
+  .start-card {
+    background:var(--forest); color:#fff;
+    border-radius:12px; padding:28px 28px; margin:24px 0 8px;
+    text-align:center;
+  }
+  .start-card .label {
+    font-size:11px; font-weight:600; letter-spacing:0.12em; text-transform:uppercase;
+    opacity:0.85; margin-bottom:10px;
+  }
+  .start-card .keyword {
+    font-family:var(--font-serif); font-size:36px; font-weight:500;
+    letter-spacing:-0.01em; line-height:1.1; margin-bottom:6px;
+  }
+  .start-card .keyword .word {
+    background:var(--brass); color:#fff;
+    padding:2px 14px; border-radius:6px;
+    display:inline-block;
+  }
+  .start-card .number {
+    font-family:var(--font-serif); font-size:30px; font-weight:500;
+    letter-spacing:0; margin-top:14px;
+  }
+  .start-card .number a {
+    color:#fff; text-decoration:none; border-bottom:1px dotted rgba(255,255,255,0.45);
+  }
+  .start-card .helper {
+    font-size:13px; opacity:0.85; margin-top:14px; line-height:1.55;
+  }
+
+  .or-divider {
+    display:flex; align-items:center; gap:14px; margin:32px 0 16px;
+    color:var(--ink-muted); font-size:11px; font-weight:600;
+    letter-spacing:0.12em; text-transform:uppercase;
+  }
+  .or-divider::before, .or-divider::after {
+    content:""; flex:1; height:1px; background:var(--line);
+  }
+
+  /* Form */
+  .form-card {
+    background:#fff; border:1px solid var(--line); border-radius:10px;
+    padding:24px; margin:16px 0 32px;
+    box-shadow:0 1px 2px rgba(27,26,23,0.04);
+  }
+  label.field {
+    display:block; margin:14px 0;
+  }
+  label.field .label-text {
+    display:block; font-size:12.5px; font-weight:600;
+    color:var(--ink-muted); margin-bottom:6px;
+    text-transform:uppercase; letter-spacing:0.06em;
+  }
+  input[type=text], input[type=tel], input[type=email] {
+    width:100%; padding:11px 14px; font-size:15px;
+    border:1px solid var(--line); border-radius:6px;
+    background:#fff; color:var(--ink);
+    font-family:inherit; line-height:1.4;
+  }
+  input:focus { outline:none; border-color:var(--forest); box-shadow:0 0 0 3px rgba(47,74,58,0.10); }
+
+  .consent {
+    display:flex; gap:12px; align-items:flex-start;
+    margin:18px 0 8px; padding:14px 16px;
+    background:var(--paper-2); border:1px solid var(--line-soft);
+    border-radius:6px; font-size:13.5px; line-height:1.6;
+  }
+  .consent input[type=checkbox] {
+    width:18px; height:18px; flex-shrink:0; margin-top:2px;
+    accent-color:var(--forest);
+  }
+  .consent label { cursor:pointer; }
+
+  button.submit {
+    background:var(--forest); color:#fff; border:none;
+    padding:13px 22px; font-size:15px; font-weight:600;
+    border-radius:6px; cursor:pointer;
+    font-family:inherit; width:100%; margin-top:14px;
+  }
+  button.submit:hover { background:#243a2e; }
+  button.submit:disabled { opacity:0.6; cursor:not-allowed; }
+
+  /* Disclosures */
+  .disclosures {
+    background:#fff; border:1px solid var(--line); border-radius:8px;
+    padding:18px 22px; margin:24px 0; font-size:13.5px; line-height:1.7;
+    color:var(--ink);
+  }
+  .disclosures dt {
+    font-size:11px; font-weight:600; text-transform:uppercase;
+    letter-spacing:0.09em; color:var(--ink-muted); margin-top:10px;
+  }
+  .disclosures dt:first-child { margin-top:0; }
+  .disclosures dd { margin:3px 0 0; }
+  .disclosures strong { font-weight:600; }
+
+  footer {
+    margin-top:64px; padding:24px 0; border-top:1px solid var(--line);
+    font-size:13px; color:var(--ink-muted);
+    display:flex; flex-wrap:wrap; gap:18px; justify-content:space-between;
+  }
+  footer a { color:var(--ink-muted); }
+
+  @media (max-width:600px) {
+    h1 { font-size:28px; }
+    .container { padding:24px 20px; }
+    .start-card .keyword { font-size:30px; }
+    .start-card .number { font-size:24px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <header>
+    <a class="brand" href="/" aria-label="Poblano Rentals — home">
+      <img src="/logo.png" alt="Poblano Rentals">
+    </a>
+  </header>
+
+  <section>
+    <div class="eyebrow"><span class="brass-rule"></span>SMS Opt-In</div>
+    <h1>Get operational text updates from Poblano Rentals.</h1>
+    <p class="lead">
+      Maintenance ticket updates, contractor scheduling, lease renewal reminders, rent reminders, and replies to your questions — sent only after you opt in.
+      No marketing, no third-party sharing.
+    </p>
+  </section>
+
+  <section>
+    <h2>Opt in two ways</h2>
+
+    <!-- PRIMARY: Text START -->
+    <div class="start-card">
+      <div class="label">The fast way</div>
+      <div class="keyword">Text <span class="word">START</span></div>
+      <div class="number">to <a href="sms:+18725887368?&body=START">872-588-7368</a></div>
+      <div class="helper">
+        You'll receive a confirmation message. You can reply <strong>STOP</strong> at any time to opt out, or <strong>HELP</strong> for help.
+      </div>
+    </div>
+
+    <div class="or-divider">or</div>
+
+    <!-- BACKUP: Form -->
+    <form class="form-card"
+          method="post"
+          action="mailto:office@poblanorentals.com?subject=SMS%20Opt-In%20Request"
+          enctype="text/plain">
+      <p style="margin:0 0 12px; font-size:14px; color:var(--ink-muted);">
+        Prefer to give us your number and have us reach out? Fill this out:
+      </p>
+
+      <label class="field">
+        <span class="label-text">Your name</span>
+        <input type="text" name="name" required autocomplete="name" placeholder="Jane Smith">
+      </label>
+
+      <label class="field">
+        <span class="label-text">Unit (if you're a current tenant)</span>
+        <input type="text" name="unit" autocomplete="off" placeholder="e.g. 544 W Wellington Apt 1E">
+      </label>
+
+      <label class="field">
+        <span class="label-text">Mobile phone</span>
+        <input type="tel" name="phone" required autocomplete="tel" placeholder="(312) 555-0123">
+      </label>
+
+      <label class="field">
+        <span class="label-text">Email</span>
+        <input type="email" name="email" required autocomplete="email" placeholder="you@example.com">
+      </label>
+
+      <div class="consent">
+        <input type="checkbox" id="consent" name="consent" required>
+        <label for="consent">
+          <strong>I consent to receive operational SMS from Poblano Rentals</strong>
+          at the phone number above — including maintenance updates, contractor scheduling, lease renewal reminders, rent reminders, and replies to inbound questions.
+          I understand message and data rates may apply, frequency varies (most users receive fewer than 5 messages per month),
+          and I can reply <strong>STOP</strong> to opt out at any time. My mobile information will not be shared with third parties for marketing or promotional purposes.
+        </label>
+      </div>
+
+      <button type="submit" class="submit">Submit opt-in request</button>
+    </form>
+  </section>
+
+  <section>
+    <h2>What you'll receive</h2>
+    <p>Only operational messages — never marketing or promotions. Examples:</p>
+    <ul>
+      <li>Maintenance ticket created / scheduled / resolved</li>
+      <li>Contractor heading to your unit, with an ETA</li>
+      <li>Lease renewal reminder when your lease enters its renewal window</li>
+      <li>Rent reminder before each month's due date</li>
+      <li>Replies to questions you've texted us</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>SMS terms at a glance</h2>
+    <dl class="disclosures">
+      <dt>Program</dt>
+      <dd>Poblano Rentals operational SMS — for current tenants, prospective tenants, owners, and contractors.</dd>
+
+      <dt>Message frequency</dt>
+      <dd>Varies based on activity at your unit or building. Most users receive fewer than 5 messages per month.</dd>
+
+      <dt>Carrier fees</dt>
+      <dd><strong>Message and data rates may apply.</strong> Your wireless carrier — not Poblano Rentals — sets these rates.</dd>
+
+      <dt>Opt out</dt>
+      <dd>Reply <strong>STOP</strong> to any of our messages to immediately unsubscribe. You'll receive one confirmation message and then no further texts unless you opt back in. UNSUBSCRIBE, END, QUIT, and CANCEL also work.</dd>
+
+      <dt>Help</dt>
+      <dd>Reply <strong>HELP</strong> to any of our messages to receive a brief reply explaining who we are and how to reach us.</dd>
+
+      <dt>Mobile information sharing</dt>
+      <dd><strong>Mobile information will not be shared with third parties or affiliates for marketing or promotional purposes.</strong> All consent and the underlying mobile information remains with Poblano Rentals.</dd>
+
+      <dt>Supported carriers</dt>
+      <dd>All major US carriers, including AT&amp;T, Verizon, T-Mobile, US Cellular, and Sprint.</dd>
+
+      <dt>Full terms</dt>
+      <dd>See <a href="/terms.html">Terms of Service</a> (Sections 2–5) and <a href="/privacy.html">Privacy Policy</a> for the complete SMS terms.</dd>
+    </dl>
+  </section>
+
+  <footer>
+    <div>© 2026 Poblano Rentals · Chicago, IL</div>
+    <div>
+      <a href="/">Home</a> · <a href="/privacy.html">Privacy</a> · <a href="/terms.html">Terms</a>
+    </div>
+  </footer>
+
+</div>
+
+</body>
+</html>
