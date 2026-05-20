@@ -29,9 +29,31 @@
   a:hover { text-decoration:underline; }
   .container { max-width:680px; margin:0 auto; padding:32px; }
 
-  header { padding:32px 0 56px; }
-  .brand { display:inline-block; line-height:0; }
-  .brand img { height:64px; width:auto; display:block; }
+  .site-nav {
+    position:sticky; top:0; z-index:50;
+    background:rgba(250,247,242,0.9);
+    -webkit-backdrop-filter:saturate(180%) blur(8px);
+    backdrop-filter:saturate(180%) blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  .site-nav-inner {
+    max-width:680px; margin:0 auto; padding:12px 32px;
+    display:flex; align-items:center; justify-content:space-between; gap:16px;
+  }
+  .brand { display:inline-flex; line-height:0; }
+  .brand img { height:38px; width:auto; display:block; }
+  .site-nav-links { display:flex; align-items:center; gap:26px; font-size:14px; }
+  .site-nav-links a { color:var(--ink-muted); font-weight:500; }
+  .site-nav-links a:hover { color:var(--ink); text-decoration:none; }
+  .site-nav-cta {
+    background:var(--forest); color:#fff !important;
+    padding:9px 18px; border-radius:6px; font-weight:600;
+  }
+  .site-nav-cta:hover { background:#25382C; text-decoration:none !important; }
+  @media (max-width:600px) {
+    .site-nav-inner { padding:10px 20px; }
+    .site-nav-anchor { display:none; }
+  }
 
   .eyebrow {
     font-size:11px; font-weight:600; letter-spacing:0.1em; text-transform:uppercase;
@@ -163,13 +185,20 @@
 </head>
 <body>
 
-<div class="container">
-
-  <header>
+<nav class="site-nav" aria-label="Primary">
+  <div class="site-nav-inner">
     <a class="brand" href="/" aria-label="Poblano Rentals — home">
       <img src="/logo.png" alt="Poblano Rentals">
     </a>
-  </header>
+    <div class="site-nav-links">
+      <a class="site-nav-anchor" href="/#properties">Properties</a>
+      <a class="site-nav-anchor" href="/#contact">Contact</a>
+      <a class="site-nav-cta" href="https://app.poblanorentals.com">Sign In</a>
+    </div>
+  </div>
+</nav>
+
+<div class="container">
 
   <section>
     <div class="eyebrow"><span class="brass-rule"></span>SMS Opt-In</div>

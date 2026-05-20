@@ -28,15 +28,31 @@
   a:hover { text-decoration:underline; }
   .container { max-width:880px; margin:0 auto; padding:32px; }
 
-  /* Header */
-  header { padding:40px 0 80px; }
-  .brand {
-    display:inline-block;
-    line-height:0;
+  /* Sticky site nav */
+  .site-nav {
+    position:sticky; top:0; z-index:50;
+    background:rgba(250,247,242,0.9);
+    -webkit-backdrop-filter:saturate(180%) blur(8px);
+    backdrop-filter:saturate(180%) blur(8px);
+    border-bottom:1px solid var(--line);
   }
-  .brand img {
-    height:80px; width:auto; display:block;
+  .site-nav-inner {
+    max-width:880px; margin:0 auto; padding:12px 32px;
+    display:flex; align-items:center; justify-content:space-between; gap:16px;
   }
+  .brand { display:inline-flex; line-height:0; }
+  .brand img { height:38px; width:auto; display:block; }
+  .site-nav-links { display:flex; align-items:center; gap:26px; font-size:14px; }
+  .site-nav-links a { color:var(--ink-muted); font-weight:500; }
+  .site-nav-links a:hover { color:var(--ink); text-decoration:none; }
+  .site-nav-cta {
+    background:var(--forest); color:#fff !important;
+    padding:9px 18px; border-radius:6px; font-weight:600;
+  }
+  .site-nav-cta:hover { background:#25382C; text-decoration:none !important; }
+
+  /* Hero (logo now lives in the nav) */
+  .hero { padding:56px 0 64px; }
 
   /* Hero */
   .eyebrow {
@@ -114,20 +130,30 @@
     .container { padding:24px 20px; }
     .property { flex-direction:column; gap:4px; }
     .property .meta { text-align:left; white-space:normal; }
+    .site-nav-inner { padding:10px 20px; }
+    .site-nav-anchor { display:none; }   /* keep just logo + Sign In on phones */
+    .hero { padding:36px 0 48px; }
   }
 </style>
 </head>
 <body>
 
-<div class="container">
-
-  <header>
+<nav class="site-nav" aria-label="Primary">
+  <div class="site-nav-inner">
     <a class="brand" href="/" aria-label="Poblano Rentals — home">
       <img src="/logo.png" alt="Poblano Rentals">
     </a>
-  </header>
+    <div class="site-nav-links">
+      <a class="site-nav-anchor" href="/#properties">Properties</a>
+      <a class="site-nav-anchor" href="/#contact">Contact</a>
+      <a class="site-nav-cta" href="https://app.poblanorentals.com">Sign In</a>
+    </div>
+  </div>
+</nav>
 
-  <section>
+<div class="container">
+
+  <section class="hero">
     <div class="eyebrow"><span class="brass-rule"></span>Poblano Rentals</div>
     <h1>Boutique residential rentals in Chicago.</h1>
     <p class="lead">
@@ -136,7 +162,7 @@
     </p>
   </section>
 
-  <section>
+  <section id="properties">
     <h2>Our properties</h2>
     <div class="properties">
       <div class="property">
@@ -166,7 +192,7 @@
     </div>
   </section>
 
-  <section>
+  <section id="contact">
     <h2>Contact</h2>
     <div class="contact">
       <dl style="margin:0;">
