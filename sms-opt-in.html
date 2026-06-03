@@ -254,16 +254,20 @@
       </label>
 
       <div class="consent">
-        <input type="checkbox" id="consent" name="consent" required>
+        <input type="checkbox" id="consent" name="consent">
         <label for="consent">
-          <strong>I consent to receive operational SMS from Poblano Rentals</strong>
+          <strong>(Optional) I consent to receive operational SMS from Poblano Rentals</strong>
           at the phone number above — including maintenance updates, contractor scheduling, lease renewal reminders, rent reminders, and replies to inbound questions.
           I understand message and data rates may apply, frequency varies (most users receive fewer than 5 messages per month),
-          and I can reply <strong>STOP</strong> to opt out at any time. My mobile information will not be shared with third parties for marketing or promotional purposes.
+          and I can reply <strong>STOP</strong> to opt out at any time. My mobile information will not be shared with third parties or affiliates for marketing or promotional purposes.
         </label>
       </div>
 
-      <button type="submit" class="submit">Submit opt-in request</button>
+      <p style="margin:6px 0 14px; font-size:13px; color:var(--ink-muted);">
+        Checking the SMS consent box is optional. Leave it unchecked and we'll only follow up by email or phone — no text messages. You can also opt in or out of SMS later by texting START or STOP to <a href="sms:+12245294459?&body=START">224-529-4459</a>.
+      </p>
+
+      <button type="submit" class="submit">Submit request</button>
     </form>
   </section>
 
